@@ -1,0 +1,16 @@
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\IGApiCoreTest.deps.json
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\IGApiCoreTest.runtimeconfig.json
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\IGApiCoreTest.runtimeconfig.dev.json
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\IGApiCoreTest.dll
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\IGApiCoreTest.pdb
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\obj\Debug\netcoreapp2.0\IGApiCoreTest.csprojResolveAssemblyReference.cache
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\obj\Debug\netcoreapp2.0\IGApiCoreTest.csproj.CoreCompileInputs.cache
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\obj\Debug\netcoreapp2.0\IGApiCoreTest.AssemblyInfoInputs.cache
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\obj\Debug\netcoreapp2.0\IGApiCoreTest.AssemblyInfo.cs
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\obj\Debug\netcoreapp2.0\IGApiCoreTest.dll
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\obj\Debug\netcoreapp2.0\IGApiCoreTest.pdb
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\IGApi.dll
+C:\Users\MP\source\repos\IGApiTests\IGApiCoreTest\bin\Debug\netcoreapp2.0\IGApi.pdb

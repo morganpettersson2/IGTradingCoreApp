@@ -1,0 +1,8 @@
+C:\Users\MP\source\repos\IGApiTests\IGApi\bin\Debug\netcoreapp2.0\IGApi.deps.json
+C:\Users\MP\source\repos\IGApiTests\IGApi\bin\Debug\netcoreapp2.0\IGApi.dll
+C:\Users\MP\source\repos\IGApiTests\IGApi\bin\Debug\netcoreapp2.0\IGApi.pdb
+C:\Users\MP\source\repos\IGApiTests\IGApi\obj\Debug\netcoreapp2.0\IGApi.csproj.CoreCompileInputs.cache
+C:\Users\MP\source\repos\IGApiTests\IGApi\obj\Debug\netcoreapp2.0\IGApi.AssemblyInfoInputs.cache
+C:\Users\MP\source\repos\IGApiTests\IGApi\obj\Debug\netcoreapp2.0\IGApi.AssemblyInfo.cs
+C:\Users\MP\source\repos\IGApiTests\IGApi\obj\Debug\netcoreapp2.0\IGApi.dll
+C:\Users\MP\source\repos\IGApiTests\IGApi\obj\Debug\netcoreapp2.0\IGApi.pdb
