@@ -13,9 +13,9 @@ namespace IGApi
             this.apiKey = apiKey;
         }  
 
-        public string cst { get;  }
-        public string xSecurityToken { get; }
-        public string apiKey { get; }
+        public string cst { get; set; }
+        public string xSecurityToken { get; set; }
+        public string apiKey { get; set; }
     }
 
 

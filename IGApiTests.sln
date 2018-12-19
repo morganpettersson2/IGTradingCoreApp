@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGApiCoreTest", "IGApiCoreTest\IGApiCoreTest.csproj", "{A5196975-A4DA-4FF0-9486-BC8C3399220D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGApiCoreTest", "IGApiCoreTest\IGApiCoreTest.csproj", "{A5196975-A4DA-4FF0-9486-BC8C3399220D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGApi", "IGApi\IGApi.csproj", "{4DBBEF7E-E6AC-4604-B938-872EAFCA0A28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGApi", "IGApi\IGApi.csproj", "{4DBBEF7E-E6AC-4604-B938-872EAFCA0A28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

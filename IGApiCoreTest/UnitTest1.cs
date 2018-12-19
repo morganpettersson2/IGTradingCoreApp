@@ -37,6 +37,29 @@ namespace IGApiCoreTest
             Assert.IsTrue(response.StatusCode == HttpStatusCode.OK);
         }
 
+        [TestMethod]
+        public void TestLoginOAuth()
+        {
+            IgRestService igRestService = new IgRestService();
+            //    HttpClient client = new HttpClient();
+            //    var response = new HttpResponseMessage();
+            //    string _identifier = "morganpettersson";
+            //    string _password = "Woodo2017";
+            //    string _apiKey = "439c48c0d6c72558b455cbaf8e6281ac1d94a82a";
+            //    string version = "3";
+            //    ConversationContext _conversationContext = new ConversationContext(null, null, _apiKey);
+            //    var bodyInput = new AuthenticationRequest { identifier = _identifier, password = _password };
+            //    StringContent scontent = new StringContent(JsonConvert.SerializeObject(bodyInput));
+            //    scontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //    client.DefaultRequestHeaders.Add("X-IG-API-KEY", _conversationContext.apiKey);
+            //    client.DefaultRequestHeaders.Add("VERSION", version);
+            //    var postTask = client.PostAsync("https://demo-api.ig.com/gateway/deal/session", scontent);
+            //    response = postTask.Result;
+
+            var response = igRestService.LoginOAuth();
+            
+        }
+
     }
 
 }

@@ -17,6 +17,6 @@ namespace IGApi
         ///<Summary>
         ///Whether the password has been sent encrypted.
         ///</Summary>
-        public bool encryptedPassword { get; set; }
+        //public bool encryptedPassword { get; set; }
     }
 }
