@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using IGApi.Model.dto.endpoint.accountbalance;
 using IGApi.Model.dto.endpoint.auth.session;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -35,6 +37,11 @@ namespace IGApi.Services
             }
             return localRespVar;
         }
+        public async Task<IgResponse<AccountDetailsResponse>> AccountBalance(string uri)
+        {
+            return await IgRestService.RestfulService<AccountDetailsResponse>(uri, HttpMethod.Get, "1", _conversationContext);
+        }
+
 
         private static AuthenticationResponse JsonConvert(JObject joj)
         {

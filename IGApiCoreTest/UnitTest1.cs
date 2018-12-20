@@ -24,21 +24,30 @@ namespace IGApiCoreTest
         //var apiKey = ConfigurationManager.AppSettings["apiKeyDemo"];
 
         private static readonly IgRestApiClient IgRestService = new IgRestApiClient();
-        private static readonly string _uri = "https://demo-api.ig.com/gateway/deal/session";
+        private static readonly string _uri = "https://demo-api.ig.com/gateway/deal/";
         private static readonly string _identifier = "morganpettersson";
         private static readonly string _password = "Woodo2017";
         private static readonly string _apiKey = "439c48c0d6c72558b455cbaf8e6281ac1d94a82a";
         private static ConversationContext _conversationContext = new ConversationContext("", "", _apiKey);
 
         [TestMethod]
-        public async Task TestLoginOAuth()
+        public async Task TestLoginExpectNoErrors()
         {
-            var response = await IgRestService.Authenticate(_conversationContext,_uri, _identifier,_password);
+            var response = await IgRestService.Authenticate(_conversationContext,_uri + "session", _identifier,_password);
             _conversationContext = IgRestService.GetConversationContext();
             Assert.IsTrue(response.StatusCode == HttpStatusCode.OK && _conversationContext.xSecurityToken.Length>0);
         }
 
+        [TestMethod]
+        public void GetAccountInfoExpectNuErrors()
+        {
+            var response = IgRestService.AccountBalance(_uri+ "/accounts");
+            //ToDo
+        }
+
     }
+
+
 
 }
 
