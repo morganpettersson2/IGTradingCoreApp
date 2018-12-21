@@ -14,19 +14,28 @@ namespace IGApi.Services
     {
         private static ConversationContext _conversationContext;
         private static readonly IgRestService IgRestService = new IgRestService();
+        //var identifier = ConfigurationManager.AppSettings["identifier"];
+        //var password = ConfigurationManager.AppSettings["password"];
+        //var apiKey = ConfigurationManager.AppSettings["apiKeyDemo"];
+        //private static readonly string _uri = ConfigurationManager.AppSettings["uri"];
+        private static readonly string _uri = "https://demo-api.ig.com/gateway/deal/";
 
         public ConversationContext GetConversationContext()
         {
-            return _conversationContext;
+            if (_conversationContext != null)
+                return _conversationContext;
+            
+
+            return null;
         }
 
-        public async Task<IgResponse<AuthenticationResponse>> Authenticate(ConversationContext conversationContext,string uri, string identifier, string password)
+        public async Task<IgResponse<AuthenticationResponse>> Authenticate(ConversationContext conversationContext, string identifier, string password)
         {
             var localRespVar = new IgResponse<AuthenticationResponse> { Response = default(AuthenticationResponse), StatusCode = HttpStatusCode.OK };
             try
             {
                 _conversationContext = conversationContext;
-                JObject joj = await IgRestService.Authenticate(_conversationContext, uri, identifier, password);
+                JObject joj = await IgRestService.Authenticate(_conversationContext, _uri + "session", identifier, password);
                 AuthenticationResponse json = JsonConvert(joj);
                 localRespVar.Response = json;
             }
@@ -37,9 +46,9 @@ namespace IGApi.Services
             }
             return localRespVar;
         }
-        public async Task<IgResponse<AccountDetailsResponse>> AccountBalance(string uri)
+        public async Task<IgResponse<AccountDetailsResponse>> AccountBalance()
         {
-            return await IgRestService.RestfulService<AccountDetailsResponse>(uri, HttpMethod.Get, "1", _conversationContext);
+            return await IgRestService.RestfulService<AccountDetailsResponse>(_uri + "accounts", HttpMethod.Get, "1", _conversationContext);
         }
 
 
@@ -64,9 +73,10 @@ namespace IGApi.Services
             return tempAu;
         }
 
-        //public async Task<IgResponse<EncryptionKeyResponse>> fetchEncryptionKey()
-        //{
-        //    return await _igRestService.FetchEncryptionKey<EncryptionKeyResponse>("/gateway/deal/session/encryptionKey", HttpMethod.Get, "1", _conversationContext);
-        //}
+   
+        public async Task<IgResponse<AccountDetailsResponse>> LogOut()
+        {
+            return await IgRestService.RestfulService<AccountDetailsResponse>(_uri + "session", HttpMethod.Get, "1", _conversationContext);
+        }
     }
 }

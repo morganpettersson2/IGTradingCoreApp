@@ -10,21 +10,20 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using IGApi.Model.dto.endpoint.accountbalance;
 using IGApi.Model.dto.endpoint.auth.session;
 using IGApi.Services;
 
 namespace IGApiCoreTest
 {
     [TestClass]
-    public class UnitTest1
+    public class AccountsUnitTests
     {
-        //var uri = ConfigurationManager.AppSettings["identifier"] + "/gateway/deal/session"; 
-        //var identifier = ConfigurationManager.AppSettings["identifier"];
-        //var password = ConfigurationManager.AppSettings["password"];
-        //var apiKey = ConfigurationManager.AppSettings["apiKeyDemo"];
+       
+  
 
         private static readonly IgRestApiClient IgRestService = new IgRestApiClient();
-        private static readonly string _uri = "https://demo-api.ig.com/gateway/deal/";
+        
         private static readonly string _identifier = "morganpettersson";
         private static readonly string _password = "Woodo2017";
         private static readonly string _apiKey = "439c48c0d6c72558b455cbaf8e6281ac1d94a82a";
@@ -33,16 +32,32 @@ namespace IGApiCoreTest
         [TestMethod]
         public async Task TestLoginExpectNoErrors()
         {
-            var response = await IgRestService.Authenticate(_conversationContext,_uri + "session", _identifier,_password);
+            var response = await IgRestService.Authenticate(_conversationContext, _identifier,_password);
             _conversationContext = IgRestService.GetConversationContext();
             Assert.IsTrue(response.StatusCode == HttpStatusCode.OK && _conversationContext.xSecurityToken.Length>0);
         }
 
         [TestMethod]
-        public void GetAccountInfoExpectNuErrors()
+        public async Task GetAccountInfoExpectNuErrors()
         {
-            var response = IgRestService.AccountBalance(_uri+ "/accounts");
-            //ToDo
+            if (IgRestService.GetConversationContext() == null )
+                await IgRestService.Authenticate(_conversationContext,  _identifier, _password);
+
+            var response = await IgRestService.AccountBalance();
+
+            Assert.IsTrue(response.Response.accounts.Count >0); 
+        }
+
+        [TestMethod]
+        public async Task LogInLogOutExpectNoErrors()
+        {
+            if (IgRestService.GetConversationContext() == null)
+                await IgRestService.Authenticate(_conversationContext, _identifier, _password);
+
+            var response = await IgRestService.LogOut();
+
+            Assert.IsTrue(response.StatusCode == HttpStatusCode.OK);
+            
         }
 
     }
