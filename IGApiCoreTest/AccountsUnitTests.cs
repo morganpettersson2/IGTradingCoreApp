@@ -60,6 +60,22 @@ namespace IGApiCoreTest
             
         }
 
+        [TestMethod]
+        public async Task GetHistoricalDataForOMX30ExpectNoErrors()
+        {           
+            string epic = "IX.D.OMX.IFM.IP";
+            string resolution = "DAY";
+            string startDate = "2018-01-01T00:00:00";
+            string endDate = "2018-12-24T00:00:00";
+            string maxPricePoints = "10";
+            string pageSize = "20";
+            string pageNr = "1";
+
+            if (IgRestService.GetConversationContext() == null)
+                await IgRestService.Authenticate(_conversationContext, _identifier, _password);
+
+            var response= IgRestService.priceSearchByDate(epic, resolution, startDate, endDate,pageNr, pageSize, maxPricePoints);
+        }
     }
 
 

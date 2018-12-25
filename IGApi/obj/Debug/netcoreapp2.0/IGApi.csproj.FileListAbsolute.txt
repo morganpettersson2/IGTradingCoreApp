@@ -19,3 +19,13 @@ C:\Privat\Projekt\IGApiTests\IGApiTests\IGApi\bin\Debug\netcoreapp2.0\Newtonsoft
 C:\Privat\Projekt\IGApiTests\IGApiTests\IGApi\bin\Debug\netcoreapp2.0\Newtonsoft.Json.xml
 C:\Privat\Projekt\IGApiTests\IGApiTests\IGApi\obj\Debug\netcoreapp2.0\IGApi.csproj.CopyComplete
 C:\Privat\Projekt\IGApiTests\IGApiTests\IGApi\bin\Debug\netcoreapp2.0\IGApi.dll.config
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\bin\Debug\netcoreapp2.0\IGApi.dll.config
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\bin\Debug\netcoreapp2.0\IGApi.deps.json
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\bin\Debug\netcoreapp2.0\IGApi.dll
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\bin\Debug\netcoreapp2.0\IGApi.pdb
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\obj\Debug\netcoreapp2.0\IGApi.csprojResolveAssemblyReference.cache
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\obj\Debug\netcoreapp2.0\IGApi.csproj.CoreCompileInputs.cache
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\obj\Debug\netcoreapp2.0\IGApi.AssemblyInfoInputs.cache
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\obj\Debug\netcoreapp2.0\IGApi.AssemblyInfo.cs
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\obj\Debug\netcoreapp2.0\IGApi.dll
+C:\Users\MP\Source\Repos\IGTradingCoreApp\IGApi\obj\Debug\netcoreapp2.0\IGApi.pdb

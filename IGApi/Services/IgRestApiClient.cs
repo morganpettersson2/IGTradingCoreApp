@@ -7,6 +7,7 @@ using IGApi.Model.dto.endpoint.auth.session;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using IGApi.Model.dto.endpoint.prices.v2;
 
 namespace IGApi.Services
 {
@@ -24,7 +25,7 @@ namespace IGApi.Services
         {
             if (_conversationContext != null)
                 return _conversationContext;
-            
+
 
             return null;
         }
@@ -72,11 +73,16 @@ namespace IGApi.Services
             }
             return tempAu;
         }
-
-   
         public async Task<IgResponse<AccountDetailsResponse>> LogOut()
         {
             return await IgRestService.RestfulService<AccountDetailsResponse>(_uri + "session", HttpMethod.Get, "1", _conversationContext);
         }
+
+        public async Task<IgResponse<PriceList>> priceSearchByDate(string epic, string resolution, string startDate, string endDate, string pageNumber, string pageSize, string maxPricePoints)
+        {
+            //https://demo-api.ig.com/gateway/deal/prices/IX.D.OMX.IFM.IP?resolution=DAY&from=2018-01-01T00:00:00&to=2018-12-21T23:59:59&max=10&pageSize=20&pageNumber=1
+            //https://demo-api.ig.com/gateway/deal//prices/IX.D.OMX.IFM.IP?resolution=DAY&from=2018-01-01T00:00:00&to=2018-12-24T00:00:00&max=10&pageSize=20&pageNumber=1
+            return await IgRestService.RestfulService<PriceList>(_uri + "/prices/" + epic + "?resolution=" + resolution + "&from=" + startDate + "&to=" + endDate + "&max=" + maxPricePoints + "&pageSize=" + pageSize + "&pageNumber=" + pageNumber, HttpMethod.Get, "3", _conversationContext);
+        }
     }
-}
+ }
