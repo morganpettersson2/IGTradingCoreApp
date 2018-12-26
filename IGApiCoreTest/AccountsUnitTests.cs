@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using IGApi.Model.dto.endpoint.accountbalance;
 using IGApi.Model.dto.endpoint.auth.session;
 using IGApi.Services;
+using IGApi.Model.dto.endpoint.prices.v2;
 
 namespace IGApiCoreTest
 {
@@ -74,8 +75,17 @@ namespace IGApiCoreTest
             if (IgRestService.GetConversationContext() == null)
                 await IgRestService.Authenticate(_conversationContext, _identifier, _password);
 
-            var response= IgRestService.priceSearchByDate(epic, resolution, startDate, endDate,pageNr, pageSize, maxPricePoints);
+            var response = IgRestService.priceSearchByDate(epic, resolution, startDate, endDate,pageNr, pageSize, maxPricePoints);
+
+            foreach(var price in response.Result.Response.prices)
+            {
+               //Spara ner till db
+
+            }
+            Assert.IsNotNull(response.Result.Response.prices);
         }
+
+
     }
 
 
