@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using IGApi.Model.dto.endpoint.accountbalance;
 using IGApi.Model.dto.endpoint.auth.session;
+using IGApi.Model.dto.endpoint.browse;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -80,9 +82,24 @@ namespace IGApi.Services
 
         public async Task<IgResponse<PriceList>> priceSearchByDate(string epic, string resolution, string startDate, string endDate, string pageNumber, string pageSize, string maxPricePoints)
         {
-            //https://demo-api.ig.com/gateway/deal/prices/IX.D.OMX.IFM.IP?resolution=DAY&from=2018-01-01T00:00:00&to=2018-12-21T23:59:59&max=10&pageSize=20&pageNumber=1
-            //https://demo-api.ig.com/gateway/deal//prices/IX.D.OMX.IFM.IP?resolution=DAY&from=2018-01-01T00:00:00&to=2018-12-24T00:00:00&max=10&pageSize=20&pageNumber=1
-            return await IgRestService.RestfulService<PriceList>(_uri + "/prices/" + epic + "?resolution=" + resolution + "&from=" + startDate + "&to=" + endDate + "&max=" + maxPricePoints + "&pageSize=" + pageSize + "&pageNumber=" + pageNumber, HttpMethod.Get, "3", _conversationContext);
+            return await IgRestService.RestfulService<PriceList>(_uri + "prices/" + epic + "?resolution=" + resolution + "&from=" + startDate + "&to=" + endDate + "&max=" + maxPricePoints + "&pageSize=" + pageSize + "&pageNumber=" + pageNumber, HttpMethod.Get, "3", _conversationContext);
         }
+        public async Task<IgResponse<BrowseMarketsResponse>> browseRoot()
+        {
+            return await IgRestService.RestfulService<BrowseMarketsResponse>(_uri +  "marketnavigation", HttpMethod.Get, "1", _conversationContext);
+        }
+        public async Task<IgResponse<BrowseMarketsResponse>> browseOmx30Root()
+        {
+            var rootNodeList = await IgRestService.RestfulService<BrowseMarketsResponse>(_uri + "marketnavigation/169465", HttpMethod.Get, "1", _conversationContext);
+            foreach (var rootNode in rootNodeList.Response.nodes)
+            {
+                var letterNode = await IgRestService.RestfulService<BrowseMarketsResponse>(_uri + "marketnavigation/" + rootNode.id, HttpMethod.Get, "1", _conversationContext);
+                foreach (var stockNode in letterNode.Response.nodes)
+                {
+                   
+                }
+            }
+        }
+
     }
- }
+}
