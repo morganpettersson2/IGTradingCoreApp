@@ -86,19 +86,21 @@ namespace IGApi.Services
         }
         public async Task<IgResponse<BrowseMarketsResponse>> browseRoot()
         {
-            return await IgRestService.RestfulService<BrowseMarketsResponse>(_uri +  "marketnavigation", HttpMethod.Get, "1", _conversationContext);
+            return await IgRestService.RestfulService<BrowseMarketsResponse>(_uri + "marketnavigation", HttpMethod.Get, "1", _conversationContext);
         }
-        public async Task<IgResponse<BrowseMarketsResponse>> browseOmx30Root()
+        public async Task<List<IG.Domain.HierarchyNode>> GetOmx30Stocks()
         {
+            List<IG.Domain.HierarchyNode> hierarchyNodeList = new List<IG.Domain.HierarchyNode>();
             var rootNodeList = await IgRestService.RestfulService<BrowseMarketsResponse>(_uri + "marketnavigation/169465", HttpMethod.Get, "1", _conversationContext);
             foreach (var rootNode in rootNodeList.Response.nodes)
             {
                 var letterNode = await IgRestService.RestfulService<BrowseMarketsResponse>(_uri + "marketnavigation/" + rootNode.id, HttpMethod.Get, "1", _conversationContext);
                 foreach (var stockNode in letterNode.Response.nodes)
                 {
-                   
+                    hierarchyNodeList.Add(new IG.Domain.HierarchyNode { Id = stockNode.id, Name = stockNode.name });
                 }
             }
+            return hierarchyNodeList;
         }
 
     }

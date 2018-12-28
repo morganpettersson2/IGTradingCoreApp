@@ -124,6 +124,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataOperations.cs" />
     <Compile Include="IgContext.cs" />
     <Compile Include="Migrations\20181227144456_init.cs" />
     <Compile Include="Migrations\20181227144456_init.designer.cs">
