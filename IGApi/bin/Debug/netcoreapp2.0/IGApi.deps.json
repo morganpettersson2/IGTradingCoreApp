@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v2.0": {
       "IGApi/1.0.0": {
         "dependencies": {
+          "IG.Domain": "1.0.0",
           "Newtonsoft.Json": "12.0.1",
           "System.Configuration.ConfigurationManager": "4.5.0"
         },
@@ -124,6 +125,11 @@
             "fileVersion": "4.6.26515.6"
           }
         }
+      },
+      "IG.Domain/1.0.0": {
+        "runtime": {
+          "IG.Domain.dll": {}
+        }
       }
     }
   },
@@ -188,6 +194,11 @@
       "sha512": "sha512-WA9ETb/pY3BjnxKjBUHEgO59B7d/nnmjHFsqjJ2eDT780nD769CT1/bw2ia0Z6W7NqlcqokE6sKGKa6uw88XGA==",
       "path": "system.security.principal.windows/4.5.0",
       "hashPath": "system.security.principal.windows.4.5.0.nupkg.sha512"
+    },
+    "IG.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

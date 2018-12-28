@@ -36,3 +36,7 @@ C:\Privat\Projekt\IGApi\IGApi\IGApi\obj\Debug\netcoreapp2.0\IGApi.AssemblyInfoIn
 C:\Privat\Projekt\IGApi\IGApi\IGApi\obj\Debug\netcoreapp2.0\IGApi.AssemblyInfo.cs
 C:\Privat\Projekt\IGApi\IGApi\IGApi\obj\Debug\netcoreapp2.0\IGApi.dll
 C:\Privat\Projekt\IGApi\IGApi\IGApi\obj\Debug\netcoreapp2.0\IGApi.pdb
+C:\Privat\Projekt\IGApi\IGApi\IGApi\bin\Debug\netcoreapp2.0\IG.Domain.dll
+C:\Privat\Projekt\IGApi\IGApi\IGApi\bin\Debug\netcoreapp2.0\IG.Domain.pdb
+C:\Privat\Projekt\IGApi\IGApi\IGApi\bin\Debug\netcoreapp2.0\IG.Domain.dll.config
+C:\Privat\Projekt\IGApi\IGApi\IGApi\obj\Debug\netcoreapp2.0\IGApi.csproj.CopyComplete

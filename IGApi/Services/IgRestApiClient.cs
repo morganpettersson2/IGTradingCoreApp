@@ -97,10 +97,17 @@ namespace IGApi.Services
                 var letterNode = await IgRestService.RestfulService<BrowseMarketsResponse>(_uri + "marketnavigation/" + rootNode.id, HttpMethod.Get, "1", _conversationContext);
                 foreach (var stockNode in letterNode.Response.nodes)
                 {
-                    hierarchyNodeList.Add(new IG.Domain.HierarchyNode { Id = stockNode.id, Name = stockNode.name });
+                    hierarchyNodeList.Add(new IG.Domain.HierarchyNode { Id = Convert.ToInt64(stockNode.id), Name = stockNode.name });
                 }
             }
             return hierarchyNodeList;
+        }
+        public async Task<IgResponse<BrowseMarketsResponse>> GetHierarchyMarket(string instrumentId)
+        {
+            
+            var node = await IgRestService.RestfulService<BrowseMarketsResponse>(_uri + "marketnavigation/" + instrumentId, HttpMethod.Get, "1", _conversationContext);
+            
+            return node;
         }
 
     }
